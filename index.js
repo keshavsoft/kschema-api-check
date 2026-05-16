@@ -5,6 +5,6 @@ const load = async (cmd) => {
     return (await import(`./bin/${v}/commands/exportCommands/${cmd}.js`)).default;
 };
 
-export const StartEndPoint = async (...a) => (await load("StartEndPoint"))(...a);
+export const endPointsJs = async (...a) => (await load("endPointsJs"))(...a);
 export const init = async (...a) => (await load("init"))(...a);
 export const tally = async (...a) => (await load("tally"))(...a);
