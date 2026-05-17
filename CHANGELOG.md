@@ -149,3 +149,7 @@ The format is based on Keep a Changelog.
 ## [1.10.2] - 2026-05-16
 
 - test perfect with insert and showall
+
+## [1.10.4] - 2026-05-17
+
+- distinct added to action

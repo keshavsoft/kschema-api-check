@@ -28,9 +28,11 @@ ${y}Usage:${r}
 ${y}options:${r}
   ${g}ShowAll${r}     the action for get
   ${g}Insert${r}      the action for post
+  ${g}Distinct${r}    the action for get and request param columnName
 
 ${y}Examples:${r}
   ${gray}npx kschema-api-gen endPointsJs ShowAll${r}
   ${gray}npx kschema-api-gen endPointsJs Insert${r}
+  ${gray}npx kschema-api-gen endPointsJs Distinct${r}
 `);
 }

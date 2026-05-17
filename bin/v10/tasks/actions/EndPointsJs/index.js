@@ -4,6 +4,7 @@ import showUsage from "./showUsage.js";
 
 import forShowAll from "./ShowAll/index.js";
 import forInsert from "./Insert/index.js";
+import forDistinct from "./Distinct/index.js";
 
 export default ({ action, toPath }) => {
     switch (action) {
@@ -20,6 +21,11 @@ export default ({ action, toPath }) => {
 
         case "Insert":
             forInsert({ action: "Insert", toPath });
+
+            break;
+
+        case "Distinct":
+            forDistinct({ action: "Distinct", toPath });
 
             break;
 
