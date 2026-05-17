@@ -9,7 +9,7 @@ const startFunc = async () => {
     const func = await load("endPointsJs");
 
     func({
-        action: "Insert",
+        action: "ShowAll",
         toPath: process.cwd()
     });
 };
