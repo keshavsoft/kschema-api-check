@@ -15,21 +15,13 @@
         "file": "insert",
         "exportFile": "Insert",
         "group": "PostMethods",
-        "description": "Generate Insert POST action",
-        "endPointsJs": {
-            "importLine": "import { postFunc } from './Insert/controller.js';",
-            "usageLine": "router.post('/Insert', express.json(), (req, res) => postFunc({ req, res, inTableName : tableName}));"
-        }
+        "description": "Generate Insert POST action"
     },
     {
         "cmd": "Distinct",
         "file": "distinct",
         "exportFile": "Distinct",
         "group": "GetMethods",
-        "description": "Generate Distinct GET action",
-        "endPointsJs": {
-            "importLine": "import { getFunc } from './Insert/controller.js';",
-            "usageLine": "router.get('/Insert/:columnName', (req, res) => getFunc({ req, res, inTableName : tableName}));"
-        }
+        "description": "Generate Distinct GET action"
     }
 ]
