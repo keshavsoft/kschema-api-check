@@ -1,15 +1,18 @@
 import getLatestVersion from "../bin/core/getLatestVersion.js";
 
+const commandToSend = "Distinct";
+
 const load = async (cmd) => {
     const v = getLatestVersion();
-    return (await import(`../bin/${v}/commands/exportCommands/${cmd}.js`)).default;
+
+    return (await import(`../bin/${v}/tasks/actions/EndPointsJs/index.js`)).default;
 };
 
 const startFunc = async () => {
     const func = await load("endPointsJs");
 
     func({
-        action: "Distinct",
+        action: commandToSend,
         toPath: process.cwd()
     });
 };

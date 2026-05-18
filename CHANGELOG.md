@@ -157,3 +157,7 @@ The format is based on Keep a Changelog.
 ## [1.11.1] - 2026-05-18
 
 - Showall perfect from json
+
+## [1.11.2] - 2026-05-18
+
+- 3 perfect from json
