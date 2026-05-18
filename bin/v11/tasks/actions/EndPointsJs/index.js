@@ -12,17 +12,13 @@ export default async ({ action, toPath }) => {
         ({ cmd }) => cmd === action
     );
 
-    if (matchedAction === undefined) {
-        showUsage();
-        return;
+    if (matchedAction) {
+        alterJsFile({
+            inImportLine: matchedAction.endPointsJs.importLine,
+            inUsageLine: matchedAction.endPointsJs.usageLine,
+            toPath
+        });
     };
-
-    alterJsFile({
-        inImportLine: matchedAction.endPointsJs.importLine,
-        inUsageLine: matchedAction.endPointsJs.usageLine,
-        toPath
-    });
-
     console.log("action : ", action, matchedAction);
 
     // const func = await loadCommand(
