@@ -165,3 +165,7 @@ The format is based on Keep a Changelog.
 ## [1.11.3] - 2026-05-18
 
 - check local npm
+
+## [1.11.4] - 2026-05-18
+
+- need to check from npm

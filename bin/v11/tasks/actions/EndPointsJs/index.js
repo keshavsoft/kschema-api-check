@@ -5,9 +5,6 @@ import actions from "../../../config/actions.json" with { type: "json" };
 import alterJsFile from "./AlterJsFile/index.js";
 
 export default async ({ action, toPath }) => {
-
-    console.log("action : ", action, toPath);
-
     const matchedAction = actions.find(
         ({ cmd }) => cmd === action
     );
@@ -19,14 +16,4 @@ export default async ({ action, toPath }) => {
             toPath
         });
     };
-    console.log("action : ", action, matchedAction);
-
-    // const func = await loadCommand(
-    //     matchedAction.exportFile
-    // );
-
-    // await func({
-    //     action,
-    //     toPath
-    // });
 };
