@@ -1,37 +1,36 @@
-// bin/v9/tasks/actions/EndPointsJs/index.js
+// bin/v11/tasks/actions/EndPointsJs/index.js
 
 import showUsage from "./showUsage.js";
+import actions from "../../../config/actions.json" with { type: "json" };
+import alterJsFile from "./AlterJsFile/index.js";
 
-import forShowAll from "./ShowAll/index.js";
-import forInsert from "./Insert/index.js";
-import forDistinct from "./Distinct/index.js";
+export default async ({ action, toPath }) => {
 
-export default ({ action, toPath }) => {
-    switch (action) {
-        case undefined:
-        case null:
-            showUsage();
+    console.log("action : ", action, toPath);
 
-            break;
+    const matchedAction = actions.find(
+        ({ cmd }) => cmd === action
+    );
 
-        case "ShowAll":
-            forShowAll({ action: "ShowAll", toPath });
-
-            break;
-
-        case "Insert":
-            forInsert({ action: "Insert", toPath });
-
-            break;
-
-        case "Distinct":
-            forDistinct({ action: "Distinct", toPath });
-
-            break;
-
-        default:
-            console.log(`Unknown action : ${action}`);
-
-            break;
+    if (matchedAction === undefined) {
+        showUsage();
+        return;
     };
+
+    alterJsFile({
+        inImportLine: matchedAction.endPointsJs.importLine,
+        inUsageLine: matchedAction.endPointsJs.usageLine,
+        toPath
+    });
+
+    console.log("action : ", action, matchedAction);
+
+    // const func = await loadCommand(
+    //     matchedAction.exportFile
+    // );
+
+    // await func({
+    //     action,
+    //     toPath
+    // });
 };
