@@ -28,8 +28,8 @@
         "group": "GetMethods",
         "description": "Generate Distinct GET action",
         "endPointsJs": {
-            "importLine": "import distinctFunc from './Distinct/controller.js';",
-            "usageLine": "router.get('/Distinct/:columnName', (req, res) => distinctFunc({ req, res, inTableName : tableName}));"
+            "importLine": "import { getFunc } from './Distinct/controller.js';",
+            "usageLine": "router.get('/Distinct/:columnName', (req, res) => getFunc({ req, res, inTableName : tableName}));"
         }
     }
 ]
